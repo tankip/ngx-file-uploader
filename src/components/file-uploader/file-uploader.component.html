@@ -1,0 +1,22 @@
+<div class="col-md-12">
+  <div class="form-group">
+    <label>Upload Image</label>
+    <div class="input-group">
+      <input type="text" class="form-control" readonly [(ngModel)]="value">
+      <span class="input-group-btn">
+        <button *ngIf="value" type="button" (click)="clear()" class="btn btn-default image-preview-clear">
+                        <span class="glyphicon glyphicon-remove"></span> Clear
+      </button>
+      <div class="btn btn-default image-preview-input">
+        <span class="glyphicon glyphicon-folder-open"></span>
+        <span class="image-preview-input-title">Browse</span>
+        <input type="file" accept="image/png, image/jpeg, image/gif" (blur)="onBlur()" name="input-file-preview" (change)="onChange($event)"
+        />
+        <!-- rename it -->
+      </div>
+      </span>
+    </div>
+    <span *ngIf="uploading">uploading please wait......</span>
+    <img src={{value}} />
+  </div>
+</div>
