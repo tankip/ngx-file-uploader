@@ -69,11 +69,9 @@ export class FileUploderComponent implements ControlValueAccessor {
 
   private onChange(event: any) {
     const files = event.srcElement.files;
-    const formData: FormData = new FormData();
-    formData.append('files', files[0], files[0].name);
     this.uploading = true;
     this.uploadStarted.emit({ status: 'upload_start' });
-    this.source(formData).subscribe((response: any) => {
+    this.source(files).subscribe((response: any) => {
       this.uploading = false;
       this.value = response.path;
       this.uploadStarted.emit({ status: 'upload_complete' });
