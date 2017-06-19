@@ -21,8 +21,7 @@ const noop = () => {
 })
 export class FileUploderComponent implements ControlValueAccessor {
   @Input() public source: any;
-  @Output() public uploadStarted: EventEmitter<any> = new EventEmitter();
-  @Output() public uploadCompleted: EventEmitter<any> = new EventEmitter();
+  @Output() public fileChanged: EventEmitter<any> = new EventEmitter();
   public _imagePath: string;
   public uploading = false;
   // The internal data model
@@ -70,13 +69,21 @@ export class FileUploderComponent implements ControlValueAccessor {
   private onChange(event: any) {
     const files = event.srcElement.files;
     this.uploading = true;
-    this.uploadStarted.emit({ status: 'upload_start' });
-    this.source(files).subscribe((response: any) => {
-      this.uploading = false;
-      this.value = response.path;
-      this.uploadStarted.emit({ status: 'upload_complete' });
-    });
+    const fileToLoad = files[0];
 
+    const fileReader = new FileReader();
+
+    fileReader.onload = (fileLoadedEvent) => {
+      const data = fileReader.result;
+      const fileType = data.substring('data:image/'.length, data.indexOf(';base64'));
+      const payload = {
+        data,
+        extension: fileType
+      };
+      this.fileChanged.emit(payload);
+    };
+
+    fileReader.readAsDataURL(fileToLoad);
   }
 
   private clear() {

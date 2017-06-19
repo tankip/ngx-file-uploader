@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'my-app',
-  template: `Image {{dataModel}} <file-uploader  [(ngModel)]="dataModel" [source]="upload">
+  template: `Image {{dataModel}} <file-uploader
+  [(ngModel)]="dataModel" (fileChanged)="upload($event)">
   </file-uploader>`
 })
 export class AppComponent {
   public header: string = 'UMD Demo';
   public dataModel: string;
-  public upload(formData: any) {
-    return Observable.of({
-      path: 'http://via.placeholder.com/1000x800'
-    });
+  public upload(file: any) {
+    console.log('file', file);
+    this.dataModel = 'https://unsplash.it/200/300';
   }
 }
