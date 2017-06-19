@@ -1,7 +1,7 @@
 {
-  "name": "angular-library-seed",
-  "version": "0.0.19",
-  "description": "Angular library seed",
+  "name": "ngx-file-uploader",
+  "version": "0.0.1",
+  "description": "Angular file uploader",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -20,17 +20,17 @@
     "typescript"
   ],
   "author": {
-    "name": "Oleksii Trekhleb",
-    "url": "https://www.linkedin.com/in/trekhleb/"
+    "name": "Emmanuel Nyachoke",
+    "url": "https://github.com/enyachoke/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trekhleb/angular-library-seed.git"
+    "url": "https://github.com/enyachoke/ngx-file-uploader.git"
   },
   "bugs": {
-    "url": "https://github.com/trekhleb/angular-library-seed/issues"
+    "url": "https://github.com/enyachoke/ngx-file-uploader/issues"
   },
-  "homepage": "https://github.com/trekhleb/angular-library-seed#readme",
+  "homepage": "https://github.com/enyachoke/ngx-file-uploader#readme",
   "scripts": {
     "build": "npm run build:esm && npm run build:umd",
     "build:esm": "gulp inline-templates && npm run ngcompile",
