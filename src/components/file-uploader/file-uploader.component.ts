@@ -22,6 +22,7 @@ const noop = () => {
 export class FileUploderComponent implements ControlValueAccessor {
   @Input() public source: any;
   @Output() public fileChanged: EventEmitter<any> = new EventEmitter();
+  @Output() public onClear: EventEmitter<any> = new EventEmitter();
   public _imagePath: string;
   public uploading = false;
   // The internal data model
@@ -88,5 +89,6 @@ export class FileUploderComponent implements ControlValueAccessor {
 
   private clear() {
     this.value = null;
+    this.onClear.emit();
   }
 }
