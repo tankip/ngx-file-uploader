@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'my-app',
   template: `Image {{dataModel}} <file-uploader
-  [(ngModel)]="dataModel" (fileChanged)="upload($event)">
+  [(ngModel)]="dataModel" (onClear)="clear()" (fileChanged)="upload($event)">
   </file-uploader>`
 })
 export class AppComponent {
@@ -12,5 +12,8 @@ export class AppComponent {
   public upload(file: any) {
     console.log('file', file);
     this.dataModel = 'https://unsplash.it/200/300';
+  }
+  public clear() {
+    console.log('Clear');
   }
 }
