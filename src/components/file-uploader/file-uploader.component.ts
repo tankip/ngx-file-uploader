@@ -63,11 +63,11 @@ export class FileUploderComponent implements ControlValueAccessor {
     this.onTouchedCallback = fn;
   }
 
-  private onBlur() {
+  public onBlur() {
     this.onTouchedCallback();
   }
 
-  private onChange(event: any) {
+  public onChange(event: any) {
     const files = event.srcElement.files;
     this.uploading = true;
     const fileToLoad = files[0];
@@ -87,7 +87,7 @@ export class FileUploderComponent implements ControlValueAccessor {
     fileReader.readAsDataURL(fileToLoad);
   }
 
-  private clear() {
+  public clear() {
     this.value = null;
     this.onClear.emit();
   }
