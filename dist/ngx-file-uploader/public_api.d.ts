@@ -1,0 +1,3 @@
+export * from './lib/ngx-file-uploader.service';
+export * from './lib/ngx-file-uploader.component';
+export * from './lib/ngx-file-uploader.module';
