@@ -1,6 +1,6 @@
 {
   "name": "ngx-file-uploader",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "ngx-file-uploader/dist/ngx-file-uploader",
   "scripts": {
     "ng": "ng",
