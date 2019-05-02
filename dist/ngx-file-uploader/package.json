@@ -1,0 +1,21 @@
+{
+  "name": "ngx-file-uploader",
+  "version": "0.0.10",
+  "peerDependencies": {
+    "@angular/common": "^6.1.0",
+    "@angular/core": "^6.1.0"
+  },
+  "main": "bundles/ngx-file-uploader.umd.js",
+  "module": "fesm5/ngx-file-uploader.js",
+  "es2015": "fesm2015/ngx-file-uploader.js",
+  "esm5": "esm5/ngx-file-uploader.js",
+  "esm2015": "esm2015/ngx-file-uploader.js",
+  "fesm5": "fesm5/ngx-file-uploader.js",
+  "fesm2015": "fesm2015/ngx-file-uploader.js",
+  "typings": "ngx-file-uploader.d.ts",
+  "metadata": "ngx-file-uploader.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
